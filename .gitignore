@@ -9,6 +9,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# 수업자료
+lecture/
+
 # token
 /config.json
 
