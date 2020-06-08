@@ -1,5 +1,6 @@
 # Environments
 my_venv/
+.idea/
 .env
 .venv
 env/
@@ -16,3 +17,4 @@ venv.bak/
 *.pot
 *.pyc
 __pycache__/
+
