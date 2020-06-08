@@ -1,0 +1,18 @@
+# Environments
+my_venv/
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# token
+/config.json
+
+# temporary files
+*.log
+*.pot
+*.pyc
+__pycache__/
