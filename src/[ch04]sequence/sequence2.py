@@ -1,5 +1,5 @@
 """
-Title: 시퀀스
+Title: 시퀀스(2)
 Index:
     1) Tuple 고급 사용
     2) Mutable vs Immutable
