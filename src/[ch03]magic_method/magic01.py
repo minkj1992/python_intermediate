@@ -17,11 +17,14 @@ print(n.__add__(100))
 print(n.__bool__(), bool(n))
 print(n * 100, n.__mul__(100))
 
-
-# 클래스 예제 1: 과일 장바구니
-# 과일 class + 과일 class
-
+# 클래스 1
 class Fruit:
+    """
+    Title : 클래스 예제 1
+    Author : Minwook Je
+    Desc : 과일 장바구니 Magic Method & getter, setter
+    """
+
     def __init__(self, name, price):
         self._name = name
         self._price = price
@@ -75,3 +78,5 @@ print(s2)
 print(s1.price)
 print(s1._price) # __변수라면 문제이지만, 싱글 언더라인은 경고만 해준다.
 print(s2.price)
+
+print(s1.__doc__)
