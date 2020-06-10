@@ -41,7 +41,7 @@ c = 30
 
 
 def func_v3(a):
-    global c
+    global c # 함수안에서 global을 쓰는 것은 좋지 못하다 ->
     print(a)
     print(c)
     c = 40
