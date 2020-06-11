@@ -1,5 +1,5 @@
 """
-Title: Coroutine Basic
+Title: Coroutine
 Index:
     1) 흐름제어, 병행성 처리
     2) 메인루틴 <-> 서브루틴 ( yield, send )
