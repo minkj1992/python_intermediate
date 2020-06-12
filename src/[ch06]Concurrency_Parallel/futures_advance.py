@@ -10,7 +10,7 @@ Index:
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait, as_completed
-
+from queue import Queue
 WORK_LIST = [10000, 100000, 1000000, 10000000]
 
 
@@ -33,7 +33,7 @@ def main():
 
     # 결과 건수
     # ProcessPoolExecutor
-    with ThreadPoolExecutor() as excutor:
+    with ThreadPoolExecutor(max_workers=worker) as excutor:
         for work in WORK_LIST:
             # future 반환
             future = excutor.submit(sum_generator, work)
@@ -61,6 +61,7 @@ def main():
             # future 결과 확인
             print('Future Result : {}, Done : {}'.format(result, done))
             print('Future Cancelled : {}'.format(cancelled))
+
 
     # 종료 시간
     end_tm = time.time() - start_tm
