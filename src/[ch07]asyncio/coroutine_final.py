@@ -4,9 +4,15 @@
 import asyncio
 import timeit
 import threading
+from bs4 import BeautifulSoup
 from urllib.request import urlopen  # block
 from concurrent.futures import ThreadPoolExecutor
 
+# 인코딩
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 # 실행 시작 시간
 start = timeit.default_timer()
 
@@ -22,9 +28,13 @@ async def fetch(url, executor):
     print('Thread Name :', threading.current_thread().getName(), 'Start', url)
     # 실행
     respond = await loop.run_in_executor(executor, urlopen, url)
+    soup = BeautifulSoup(respond.read(), 'html.parser')
+
+    result_data = soup.title
+
     print('Thread Name :', threading.current_thread().getName(), 'Done', url)
 
-    return respond.read()[:5]
+    return result_data
 
 
 async def main():
